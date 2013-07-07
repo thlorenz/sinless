@@ -1,6 +1,6 @@
 {
   "name": "sinless",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Wraps sync functions to make them non-blocking and leaves async functions unchanged.",
   "main": "index.js",
   "scripts": {
