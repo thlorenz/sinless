@@ -29,18 +29,3 @@ var sinless = module.exports = function (fn, lenWithCb) {
   return wrapperWithLen(fn, lenWithCb);
 };
 
-function syncAdd (a, b) {
-  return a + b;
-}
-
-function asyncAdd (a, b, cb) {
-  setImmediate(function () { cb(null, a + b) });
-}
-
-var res = syncAdd( 1, 2);
-
-var sinlessAdd = sinless(syncAdd, 3);
-sinlessAdd(1, 3, function (err, res) {
-  console.error('err: ', err);
-  console.error('res: ', res);
-});
