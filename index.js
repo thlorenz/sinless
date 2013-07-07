@@ -1,6 +1,8 @@
 'use strict';
 
-var setImmediate = require('./lib/setImmediate');
+/*global setImmediate*/
+require('setimmediate');
+
 var slice = Array.prototype.slice;
 
 function asyncify (fn) {
