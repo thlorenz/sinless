@@ -17,7 +17,7 @@ function asyncify (fn) {
       setImmediate(cb.bind(null, err));
     }
 
-  }.bind(this);
+  };
 }
 
 function wrapperWithLen (fn, lenWithCb) {
