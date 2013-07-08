@@ -14,13 +14,20 @@ function syncAdd (a, b) {
   return a + b;
 }
 
-var sinlessAdd = sinless(syncAdd, 3);
+// fn takes 3 args if it is async and has a callback 
+var sinlessAdd = sinless(syncAdd, 3); 
 sinlessAdd(1, 3, function (err, res) {
   if (err) return console.error('err', err);
   console.log('res', res);
 })
 
 // res: 4
+```
+
+```js
+// although it makes deducing fn's asynchronousity more solid, supplying number of args is optional
+// Therefore the below also works assuming that syncAdd's number of arguments is constant
+var sinlessAdd = sinless(syncAdd); 
 ```
 
 ## Installation
@@ -37,6 +44,7 @@ sinlessAdd(1, 3, function (err, res) {
 
 ### *sinlessAdd(fn, lenWithCb)*
 
+```
 /**
   * Returns an async version of a given function or the function itself if it could be determined to be async already.
   * If lenWithCb is given, the function will be wrapped if the number of its arguments are smaller than this length.
@@ -48,6 +56,7 @@ sinlessAdd(1, 3, function (err, res) {
   * @param lenWithCb {Number} [optional] number of arguments the function should have if it was async and included a callback
   * @return {Function} either the original function or a wrapped version of it
   */
+```
 
 ## License
 

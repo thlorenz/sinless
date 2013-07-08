@@ -42,7 +42,8 @@ function wrapperWithLen (fn, lenWithCb) {
 
 /**
   * Returns an async version of a given function or the function itself if it could be determined to be async already.
-  * If lenWithCb is given, the function will be wrapped if the number of its 
+  * If lenWithCb is given, the function will be wrapped if the number of its arguments are smaller than this length.
+  * If lenWithCb is not given the function will be wrapped whenever it is called with more arguments than it takes. 
   *
   * @name sinless
   * @function
