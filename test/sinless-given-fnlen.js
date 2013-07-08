@@ -19,7 +19,7 @@ function asyncAdd (a, b, cb) {
   setImmediate(cb.bind(null, null, a + b));
 }
 
-test('\nsync add returning result', function (t) {
+test('\ngiven len - sync add returning result', function (t) {
   var finishedLoop;  
 
   var sinlessAdd = sinless(syncAdd, 3);
@@ -34,7 +34,7 @@ test('\nsync add returning result', function (t) {
   finishedLoop = true;
 })
 
-test('\nsync add throwing error', function (t) {
+test('\ngiven len - sync add throwing error', function (t) {
   var finishedLoop;  
 
   var sinlessError = sinless(syncError, 3);
@@ -48,7 +48,7 @@ test('\nsync add throwing error', function (t) {
   finishedLoop = true;
 })
 
-test('\nalready async add gets passed thru', function (t) {
+test('\ngiven len - already async add gets passed thru', function (t) {
   var sinlessAdd = sinless(asyncAdd, 3);
   t.equal(sinlessAdd, asyncAdd, 'no async version is created')
   t.end()
