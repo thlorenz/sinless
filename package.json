@@ -1,6 +1,6 @@
 {
   "name": "sinless",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Adapts sync functions to expose async api and leaves async functions unchanged..",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,15 @@
     "tape": "~1.0.4",
     "tap": "~0.4.3"
   },
-  "keywords": [ "sync", "async", "callback", "return", "wrap", "adapt", "convert" ],
+  "keywords": [
+    "sync",
+    "async",
+    "callback",
+    "return",
+    "wrap",
+    "adapt",
+    "convert"
+  ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
