@@ -37,7 +37,7 @@ var sinlessAdd = sinless(syncAdd);
 ## Features
 
 - consume identical API while giving function implementers the option to return synchronously or callback asynchronously [see
-  example]()
+  example](https://github.com/thlorenz/sinless/blob/master/examples/unified-api.js)
 - **does not make sync calls async**, i.e. `fs.readFileSync` will still block
 
 ## API
