@@ -5,7 +5,7 @@
 **sinless** [ˈsɪnlɪs]
 *free from sin or guilt; innocent; pure*
 
-Wraps sync functions to make them non-blocking and leaves async functions unchanged.
+Adapts sync functions to expose async api and leaves async functions unchanged.
 
 ```js
 var sinless = require('sinless')
@@ -23,17 +23,31 @@ sinlessAdd(1, 3, function (err, res) {
 // res: 4
 ```
 
-## Status
-
-**Alpha** use at your own risk ;).
-Partially implemented, aynchronousity deduced by function length at this point.
-
 ## Installation
 
     npm install sinless
 
+## Features
+
+- consume identical API while giving function implementers the option to return synchronously or callback asynchronously [see
+  example]()
+- **does not make sync calls async**, i.e. `fs.readFileSync` will still block
+
 ## API
 
+### *sinlessAdd(fn, lenWithCb)*
+
+/**
+  * Returns an async version of a given function or the function itself if it could be determined to be async already.
+  * If lenWithCb is given, the function will be wrapped if the number of its arguments are smaller than this length.
+  * If lenWithCb is not given the function will be wrapped whenever it is called with more arguments than it takes. 
+  *
+  * @name sinless
+  * @function
+  * @param fn {Function} to be wrapped if it isn't async
+  * @param lenWithCb {Number} [optional] number of arguments the function should have if it was async and included a callback
+  * @return {Function} either the original function or a wrapped version of it
+  */
 
 ## License
 

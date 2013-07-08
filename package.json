@@ -1,7 +1,7 @@
 {
   "name": "sinless",
   "version": "0.0.1",
-  "description": "Wraps sync functions to make them non-blocking and leaves async functions unchanged.",
+  "description": "Adapts sync functions to expose async api and leaves async functions unchanged..",
   "main": "index.js",
   "scripts": {
     "test-main": "tap test/*.js",
@@ -23,7 +23,7 @@
     "tape": "~1.0.4",
     "tap": "~0.4.3"
   },
-  "keywords": [],
+  "keywords": [ "sync", "async", "callback", "return", "wrap", "adapt", "convert" ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
