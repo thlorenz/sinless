@@ -16,7 +16,7 @@ function syncError (a, b) {
 }
 
 function asyncAdd (a, b, cb) {
-  setImmediate(cb.bind(null, null, a + b));
+  setImmediate(function () { cb(null, a + b); });
 }
 
 test('\ngiven len - sync add returning result', function (t) {

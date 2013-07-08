@@ -16,11 +16,11 @@ function syncError (a, b) {
 }
 
 function asyncAdd (a, b, cb) {
-  setImmediate(cb.bind(null, null, a + b));
+  setImmediate(function () { cb(null, a + b); });
 }
 
 function asyncError (a, b, cb) {
-  setImmediate(cb.bind(null, new Error('oops')));
+  setImmediate(function () { cb(new Error('oops')); });
 }
 
 test('\nnot given len - sync add returning result', function (t) {

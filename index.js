@@ -8,9 +8,9 @@ var slice = Array.prototype.slice;
 function runAsync (fn, args, cb) {
   try {
     var res = fn.apply(this, args);
-    setImmediate(cb.bind(null, null, res));
+    setImmediate(function () { cb(null, res); });
   } catch (err) {
-    setImmediate(cb.bind(null, err));
+    setImmediate(function () { cb(err); });
   }
 }
 
