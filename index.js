@@ -29,7 +29,7 @@ function wrapperWithoutLen (fn) {
 }
 
 function wrapperWithLen (fn, lenWithCb) {
-  var isAsync = fn.length === lenWithCb;
+  var isAsync = fn.length >= lenWithCb;
   return isAsync 
     ? fn 
     : function () {
@@ -40,6 +40,16 @@ function wrapperWithLen (fn, lenWithCb) {
       };
 }
 
+/**
+  * Returns an async version of a given function or the function itself if it could be determined to be async already.
+  * If lenWithCb is given, the function will be wrapped if the number of its 
+  *
+  * @name sinless
+  * @function
+  * @param fn {Function} to be wrapped if it isn't async
+  * @param lenWithCb {Number} [optional] number of arguments the function should have if it was async and included a callback
+  * @return {Function} either the original function or a wrapped version of it
+  */
 var sinless = module.exports = function (fn, lenWithCb) {
   return lenWithCb ? wrapperWithLen(fn, lenWithCb) : wrapperWithoutLen(fn);
 };
