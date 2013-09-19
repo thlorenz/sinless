@@ -42,7 +42,7 @@ var sinlessAdd = sinless(syncAdd);
 
 ## API
 
-### *sinlessAdd(fn, lenWithCb)*
+### *sinless(fn, lenWithCb)*
 
 ```
 /**
